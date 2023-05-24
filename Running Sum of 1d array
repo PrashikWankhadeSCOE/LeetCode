@@ -1,0 +1,28 @@
+1480. Running Sum of 1d Array
+
+=====================================
+
+import java.util.*;
+
+class Solution {
+    public static int[] runningSum(int[] nums) {
+        int [] temp = nums;
+        int [] ret = new int [temp.length];
+        for(int i = 0;i<temp.length;i++){
+            
+            for(int j = 0;j<=i;j++){
+                ret[i]=ret[i]+temp[j];
+                
+            }
+        }
+        return ret;
+    }
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int [] nums = new int [1000]; 
+        int [] arr = runningSum(nums);
+        for(int i = 0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+}
