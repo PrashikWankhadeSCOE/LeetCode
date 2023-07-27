@@ -1,0 +1,35 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+        StringBuffer sb = new StringBuffer();
+        for(int num : digits){
+            sb.append(num);
+        }
+        String str = sb.toString();
+
+        int x = Integer.parseInt(str);
+        x++;
+        sb=new StringBuffer("");
+        sb.append(x);
+
+        String str1 = sb.toString();
+        char[] ch = str1.toCharArray();
+
+        int[] result = new int[ch.length];
+        for (int i = 0; i < ch.length; i++) {
+            result[i] = Character.getNumericValue(ch[i]);
+        }
+        return result;
+
+    }
+}
+class Demo{
+        public static void main(String[] args){
+                int [] digits = {9,8,7,6,5,4,3,2,1,0};
+                Solution s = new Solution();
+                int [] ch = s.plusOne(digits);
+                for(int num :ch){
+                        System.out.println(num);
+                }
+
+        }
+}
